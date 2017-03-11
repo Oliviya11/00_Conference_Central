@@ -71,7 +71,8 @@ public class ConferenceApi {
         String tempDisplayName = p.getDisplayName();
         if (tempDisplayName!=null)
         	displayName = tempDisplayName;
-
+        else 
+                displayName = null;
         // TODO 2
         // Get the userId and mainEmail
         userId = u.getUserId();
@@ -89,7 +90,7 @@ public class ConferenceApi {
           if (profile==null){
         	  profile = new Profile(userId, displayName, mainEmail, teeShirtSize);
           }
-          else{
+          else if (!displayName.equals(extractDefaultDisplayNameFromEmail(mainEmail))){
         	  profile.update(displayName, teeShirtSize);
           }
         // TODO 3 (In Lesson 3)
