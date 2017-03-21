@@ -89,18 +89,12 @@ public class ConferenceApi {
         
         String tempDisplayName = profileForm.getDisplayName();
         if (tempDisplayName!=null)
-<<<<<<< HEAD
             displayName = tempDisplayName;
         else {
         	displayName = null;
         }
         
         
-=======
-        	displayName = tempDisplayName;
-        else 
-                displayName = null;
->>>>>>> origin/master
         // TODO 2
         // Get the userId and mainEmail
        
@@ -122,12 +116,8 @@ public class ConferenceApi {
           if (profile==null){
         	  profile = new Profile(userId, displayName, mainEmail, teeShirtSize);
           }
-<<<<<<< HEAD
           else{
         	  if (!(displayName.equals(def)))
-=======
-          else if (!displayName.equals(extractDefaultDisplayNameFromEmail(mainEmail))){
->>>>>>> origin/master
         	  profile.update(displayName, teeShirtSize);
           }
         // TODO 3 (In Lesson 3)
